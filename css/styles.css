@@ -1,11 +1,6 @@
 /*   ฅ^•ﻌ•^ฅ   */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
 
-.btn-primary {
-  --bs-btn-bg: #142a60;
-  --bs-btn-border-color: #142a60;
-}
-
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -39,6 +34,13 @@ body {
   .bg-fixed {
     background-image: url(../imgs/bg_main_desktop.png);
   }
+}
+
+.btn-primary {
+  --bs-btn-bg: #142a60;
+  --bs-btn-border-color: #142a60;
+  --bs-btn-hover-bg: #455787;
+  --bs-btn-hover-border-color: #455787;
 }
 
 .btn-custom {
