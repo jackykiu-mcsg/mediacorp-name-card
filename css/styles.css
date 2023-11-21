@@ -1,4 +1,10 @@
+/*   ฅ^•ﻌ•^ฅ   */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+.btn-primary {
+  --bs-btn-bg: #142a60;
+  --bs-btn-border-color: #142a60;
+}
 
 html {
   font-family: sans-serif;
@@ -35,6 +41,17 @@ body {
   }
 }
 
+.btn-custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-custom i {
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+}
+
 .icon-large {
   font-size: 2rem;
 }
@@ -64,3 +81,15 @@ body {
   margin: 0 auto;
 }
 
+/* Footer */
+footer {
+  margin-top: auto;
+}
+
+footer .copyright-text {
+  color: #888888;
+  font-size: 0.5rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
