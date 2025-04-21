@@ -11,6 +11,7 @@ html {
 
 body {
   margin: 0;
+  height: 100vh;
   font-family: 'Effra', 'Noto Sans SC', Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -20,85 +21,171 @@ body {
   background-color: #333333;
 }
 
-.bg-fixed {
-  /* position: fixed; */
-  /* width: 100vw; */
-  /* height: 100vh; */
-  background-image: url(../imgs/bg_main_mobile.png);
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* z-index: -1; */
+.card-container {
+  position: relative;
+  max-width: 420px;
+  margin: 5px auto 50px;
+  background: #E8E7E1;
+  padding: 0px 20px 5px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px #000000;
 }
 
-@media (min-width: 576px) {
-  .bg-fixed {
-    background-image: url(../imgs/bg_main_desktop.png);
-  }
+.flip-container {
+  perspective: 1000px;
+  height: 100%;
 }
 
-.btn-primary {
-  --bs-btn-bg: #333333;
-  --bs-btn-border-color: #333333;
-  --bs-btn-hover-bg: #455787;
-  --bs-btn-hover-border-color: #455787;
+.card-container {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
-.btn-custom {
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: #f7f7f2;
+  border-radius: 12px;
+  padding: 30px 20px;
+  z-index: 2;
+}
+
+.flip-container.flipped .card-container {
+  transform: rotateY(180deg);
+}
+
+.main-logo {
+  display: block;
+  margin: 0 auto 15px;
+  height: 40px;
+}
+
+.brand-logos {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 10px;
+  margin-bottom: 35px;
 }
 
-.btn-custom i {
-  font-size: 1.4rem;
-  margin-right: 0.5rem;
-}
-
-.icon-large {
-  font-size: 2rem;
-}
-
-.icon-btn {
-  position: relative;
-  top: 0;
-  width: 3.4rem;
-  height: 3.4rem;
-  border: 2px solid #333333;
-  border-radius: 25%;
-  transition: top ease 200ms;
-}
-
-@media (min-width: 576px) {
-  .icon-btn:hover {
-    top: -10px;
-  }
-}
-
-.icon-btn > a {
-  color: #333333;
-}
-
-.icon-btn > i {
-  display: block;
-  margin: 0 auto;
-}
-
-.department-logos img {
+.brand-logos img {
   height: 28px;
-  margin: 0.5rem;
 }
 
-
-/* Footer */
-footer {
-  margin-top: auto;
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: #333;
+  opacity: 0.4;
 }
 
-footer .copyright-text {
-  color: #888888;
-  font-size: 0.5rem;
+.name {
+  font-weight: 700;
+  font-size: 1.5rem;
   text-align: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+}
+
+.position,
+.team,
+.chinese-position {
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.language-position {
+  font-style: normal;
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.action-buttons .btn {
+  width: 45%;
+  background: #E8E7E1;
+  border: 2px solid #333;
+  border-radius: 1rem;
+  margin-bottom: 10px;
+  padding: 10px 10px 5px 10px;
+  font-size: 1rem;
+  box-shadow: 0 4px 0 #333;
+  transition: transform ease 200ms, box-shadow ease 200ms;
+}
+
+.action-buttons .btn:hover {
+  /* background: #333; */
+  box-shadow: 0 0px 0 #333;
+  transform: translateY(4px);
+}
+.action-buttons .btn:active {
+  box-shadow: 0 0px 0 #333;
+  transform: translateY(4px);
+}
+
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.4rem;
+  margin-top: 30px;
+}
+
+.socials a {
+  color: #727272;
+  text-decoration: none;
+  transition: transform ease 200ms;
+}
+
+.socials a:hover {
+  color: #333;
+  transform: translateY(-5px);;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.55rem;
+}
+
+.corner-triangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 200px solid #c4c4c4;
+  border-left: 120px solid transparent;
+  border-top-right-radius: 12px;
+}
+
+.corner-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 200px solid #c4c4c4;
+  border-right: 120px solid transparent;
+  border-bottom-left-radius: 12px;
 }
