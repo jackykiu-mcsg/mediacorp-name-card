@@ -21,10 +21,10 @@
   <meta property="og:image" content="imgs/mediacorp-logo.png" />
   
   <!-- Web App owner -->
-  <meta name="copyright" content="Copyright (c) 2023, 広末堂. All Rights Reserved." />
+  <meta name="copyright" content="Copyright (c) 2025, 広末堂. All Rights Reserved." />
   <meta name="author" content="Jacky Kiu" />
-  <meta name="publisher" content="Not A Systems" />
-  <meta name="generator" content="v0.1" />
+  <meta name="publisher" content="Hirosue Studio" />
+  <meta name="generator" content="v2.0" />
   
   <!-- iOS web app icon set -->
   <meta name="apple-mobile-web-app-title" content="Jacky Kiu" />
@@ -39,7 +39,6 @@
   <link rel="icon" type="image/png" sizes="192x192" href="favicons/icons-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="favicons/icons-512.png" />
   
-  
   <!-- Default web icon set -->
   <link rel="icon shortcut" href="favicons/favicon.png" />
   
@@ -47,7 +46,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
 
   <link rel="stylesheet" href="css/styles.css">
 
@@ -60,26 +59,29 @@
 
       // Hide all language divs
       $('.s_chinese, .japanese, .english').hide();
+      $('.main-position').removeClass('mb-3');
 
       // Show the selected language div
       if (language == "english") {
         $('#languageSymbol').text("Eng");
         $('.' + language.toLowerCase()).show();
+        $('.eng').show();
         $('.t_chinese, .s_chinese, .japanese, .name').hide();
+        $('.main-position').addClass('mb-3');
       } else if (language == "japanese") {
         $('#languageSymbol').text("日");
         $('.' + language.toLowerCase()).show();
-        $('.t_chinese, .s_chinese, .name').hide();
+        $('.t_chinese, .s_chinese, .name, .eng').hide();
       } else if (language == "s_chinese") {
         $('#languageSymbol').text("简");
         $('.' + language.toLowerCase()).show();
         $('.name').show();
-        $('.t_chinese, .japanese').hide();
+        $('.t_chinese, .japanese, .eng').hide();
       } else {
         $('#languageSymbol').text("繁");
         $('.' + language.toLowerCase()).show();
         $('.name').show();
-        $('.s_chinese, .japanese').hide();
+        $('.s_chinese, .japanese, .eng').hide();
       }
     }
   </script>
@@ -91,7 +93,7 @@
     <div class="row py-2">
       <div class="col-12 text-end">
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle d-inline-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span id="languageSymbol"><i class="bi bi-translate"></i></span></button>
+          <button class="btn btn-outline-light dropdown-toggle d-inline-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span id="languageSymbol"><i class="bi bi-translate"></i></span></button>
           <ul class="dropdown-menu shadow">
             <li class="text-center">
               <a class="dropdown-item" href="#" onclick="changeLanguage('t_chinese')">繁體</a>
@@ -111,9 +113,9 @@
     </div>
   </div>
 
-  <div class="flip-container">
-    <div class="card-container">
-      <!-- Front Side -->
+  <div class="card-container">
+    <div class="card-inner">
+      <!-- Front side -->
       <div class="card-front">
         <div class="corner-triangle"></div>
         
@@ -127,7 +129,7 @@
         
             <div class="divider mx-1"></div>
         
-            <a href="https://entlife.8world.com" target="_blank" class="department-logos"><img src="imgs/logo_vibes_horizontal.png" alt="Vibes by 8world" class="img-fluid"></a>
+            <a href="https://vibes.8world.com" target="_blank" class="department-logos"><img src="imgs/logo_vibes_horizontal.png" alt="Vibes by 8world" class="img-fluid"></a>
         
             <div class="divider mx-1"></div>
         
@@ -139,25 +141,43 @@
             <h3 class="english mb-0" style="display: none;">Jacky Kiu</h3>
             <h3 class="japanese mb-0" style="display: none;">雲翔 邱 • ジャッキー</h3>
         
-            <h6 class="position mb-0">Senior Web Designer</h6>
+            <h6 class="main-position mb-0">Senior Web Designer</h6>
             <h6 class="language-position t_chinese">資深網頁設計師</h6>
             <h6 class="language-position s_chinese" style="display: none;">高级网页设计师</h6>
             <h6 class="language-position japanese" style="display: none;">シニアンウェブデザイナー</h6>
         
-            <span class="position">Chinese Growth</span>
-            <br />
-            <span class="position">Growth (NCA-Chinese)</span>
-            <br />
+            <p class="department mb-0">Chinese Growth</p>
+            <p class="department mb-0">Growth (NCA-Chinese)</p>
             <span class="language-positiont t_chinese">華語受眾發展與策劃部</span>
             <span class="language-positions s_chinese" style="display: none;">中文用户增长与策划部</span>
             <span class="language-position japanese" style="display: none;">中国語オーディエンス企画拡大部</span>
           </div>
         
           <div class="action-buttons">
-            <a href="tel:85313851" class="btn"><i class="fas fa-phone"></i> <span>Call</span></a>
-            <a href="mailto:Jacky.Kiu@mediacorp.com.sg" class="btn"><i class="fas fa-envelope"></i> <span>Email</span></a>
-            <a href="https://www.linkedin.com/in/yunsiang/" target="_blank" class="btn"><i class="fas fa-id-card"></i> <span>Contact Info</span></a>
-            <a href="#" class="btn" onclick="flipCard()"><i class="fas fa-qrcode"></i> <span>QR Code</span></a>
+            <a href="tel:85313851" class="btn">
+              <i class="bi bi-telephone-fill"></i> <span class="eng" style="display: none;">Call</span>
+              <span class="t_chinese">電話聯絡</span>
+              <span class="s_chinese" style="display: none;">电话联系</span>
+              <span class="japanese" style="display: none;">電話相談</span>
+            </a>
+            <a href="mailto:Jacky.Kiu@mediacorp.com.sg" class="btn">
+              <i class="bi bi-envelope-fill"></i> <span class="eng" style="display: none;">Email</span>
+              <span class="t_chinese">電子郵件</span>
+              <span class="s_chinese" style="display: none;">电子信函</span>
+              <span class="japanese" style="display: none;">電子メール</span>
+            </a>
+            <a href="namecard/JackyKiu_vCard.vcf" target="_blank" class="btn">
+              <i class="bi bi-person-vcard-fill"></i> <span class="eng" style="display: none;">vCard Download</span>
+              <span class="t_chinese">下載電子名片</span>
+              <span class="s_chinese" style="display: none;">下载电子名片</span>
+              <span class="japanese" style="display: none;">vCardダウンロード</span>
+            </a>
+            <a href="#" class="btn" onclick="flipCard()">
+              <i class="bi bi-qr-code-scan"></i> <span class="eng" style="display: none;">QR Code</span>
+              <span class="t_chinese">QR碼</span>
+              <span class="s_chinese" style="display: none;">二维码</span>
+              <span class="japanese" style="display: none;">QRコード</span>
+            </a>
           </div>
         
           <div class="socials">
@@ -174,11 +194,17 @@
         
         <div class="corner-bottom"></div>
       </div>
-  
-      <!-- Back Side -->
-      <div class="card-back d-flex flex-column justify-content-center align-items-center">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://your-link.com" alt="QR Code">
-        <button class="btn btn-dark mt-3" onclick="flipCard()">Back</button>
+    
+      <!-- Back side -->
+      <div class="card-back">
+        <div class="text-center">
+          <img src="imgs/img_qr_vcf.png" alt="QR Code" class="img-fluid qr-code">
+          <div class="action-buttons mt-4">
+            <a href="#" class="btn" onclick="flipCard()">
+              <i class="fas fa-arrow-left"></i> <span>Back</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -187,7 +213,7 @@
 
   <script>
     function flipCard() {
-      document.querySelector('.flip-container').classList.toggle('flipped');
+      document.querySelector('.card-container').classList.toggle('flipped');
     }
   </script>
 
