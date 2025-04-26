@@ -113,9 +113,9 @@ body {
 
 .action-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.8rem;
   margin-top: 20px;
 }
 
@@ -140,7 +140,6 @@ body {
   box-shadow: 0 0px 0 #333;
   transform: translateY(4px);
 }
-
 
 .socials {
   display: flex;
