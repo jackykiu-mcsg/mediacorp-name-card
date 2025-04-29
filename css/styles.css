@@ -197,3 +197,22 @@ body {
   border-right: 120px solid transparent;
   border-bottom-left-radius: 12px;
 }
+
+@media (max-width: 389px) {
+  .card-container {
+    min-height: 760px;
+    /* 添加最小高度 */
+  }
+
+  .card-front,
+  .card-back {
+    min-height: 760px;
+    /* 添加最小高度 */
+  }
+  
+  .action-buttons .btn {
+    width: 100%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
