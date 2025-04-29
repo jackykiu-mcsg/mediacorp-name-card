@@ -126,7 +126,7 @@ body {
   border: 2px solid #333;
   border-radius: 1rem;
   margin-bottom: 10px;
-  padding: 10px 10px 5px 10px;
+  padding: 10px 5px 5px 5px;
   font-size: 1rem;
   box-shadow: 0 4px 0 #333;
   transition: transform ease 200ms, box-shadow ease 200ms;
@@ -209,10 +209,16 @@ body {
     min-height: 760px;
     /* 添加最小高度 */
   }
+
+  .brand-logos img {
+    height: 25px;
+  }
+
+  .divider {
+    height: 35px;
+  }
   
   .action-buttons .btn {
-    width: 100%;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    width: 80%;
   }
 }
