@@ -121,19 +121,19 @@
         
         <div class="position-relative z-1">
           <div class="text-center">
-            <a href="https://www.mediacorp.com.sg" target="_blank"><img src="imgs/logo_mediacorp_v2.png" alt="Mediacorp" class="img-fluid" width="200px"></a>
+            <a href="https://www.mediacorp.com.sg" target="_blank"><img src="imgs/logo_mediacorp_v2.png" alt="Mediacorp" id="logoMediacorp" class="img-fluid" width="200px"></a>
           </div>
         
           <div class="brand-logos d-flex justify-content-center align-items-center text-center">
-            <a href="https://www.8world.com" target="_blank" class="department-logos"><img src="imgs/logo_8world_horizontal.png" alt="8world News" class="img-fluid"></a>
+            <a href="https://www.8world.com" target="_blank" class="department-logos"><img src="imgs/logo_8world_horizontal.png" alt="8world News" id="logo8world" class="img-fluid"></a>
         
             <div class="divider mx-1"></div>
         
-            <a href="https://vibes.8world.com" target="_blank" class="department-logos"><img src="imgs/logo_vibes_horizontal.png" alt="Vibes by 8world" class="img-fluid"></a>
+            <a href="https://vibes.8world.com" target="_blank" class="department-logos"><img src="imgs/logo_vibes_horizontal.png" alt="Vibes by 8world" id="logoVibes" class="img-fluid"></a>
         
             <div class="divider mx-1"></div>
         
-            <a href="https://www.melisten.sg/radio/capital-958?al=1&ap=1&cid=8world_capital-958-radio_website_20062022_meLISTEN" target="_blank" class="department-logos"><img src="imgs/logo_capital958_horizontal.png" alt="Capital 958" class="img-fluid"></a>
+            <a href="https://www.melisten.sg/radio/capital-958?al=1&ap=1&cid=8world_capital-958-radio_website_20062022_meLISTEN" target="_blank" class="department-logos"><img src="imgs/logo_capital958_horizontal.png" alt="Capital 958" id="logoCapital958" class="img-fluid"></a>
           </div>
         
           <div class="text-center">
@@ -210,11 +210,22 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
   <script>
     function flipCard() {
       document.querySelector('.card-container').classList.toggle('flipped');
     }
+
+    var cover = gsap.timeline({
+      repeat: -1, // number of repeats (-1 for infinite)
+      repeatDelay: 120, // seconds between repeats
+    });
+
+    cover.from("#logoMediacorp", { duration: 0.8, opacity: 0, ease: "power2.inOut" });
+    cover.from("#logo8world", { duration: 0.4, opacity: 0, ease: "power2.inOut" });
+    cover.from("#logoVibes", { duration: 0.4, opacity: 0, ease: "power2.inOut" });
+    cover.from("#logoCapital958", { duration: 0.4, opacity: 0, ease: "power2.inOut" });
   </script>
 
   <script>
