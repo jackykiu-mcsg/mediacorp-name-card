@@ -150,12 +150,25 @@ body {
   -webkit-text-stroke-width: 1px;
 }
 
+.award img {
+  max-width: 100%;
+  height: 4rem;
+}
+
+.event-title {
+  font-size: 0.5rem;
+}
+
+.winner-title {
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+
 .socials {
   display: flex;
   justify-content: center;
   gap: 20px;
   font-size: 1.4rem;
-  margin-top: 30px;
 }
 
 .socials a {
